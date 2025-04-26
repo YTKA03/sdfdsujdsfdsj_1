@@ -1,0 +1,59 @@
+<Window x:Class="GMGN_Notifications.SubscriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GMGN_Notifications" Height="400" Width="400"
+        Background="#F1F1F1"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Border Background="White" 
+                Width="300" 
+                Padding="20" 
+                CornerRadius="8"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.1"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Статус підписки" 
+                           FontSize="20" 
+                           FontFamily="Arial" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,20"/>
+
+                <!-- Telegram ID -->
+                <TextBlock FontSize="13" FontFamily="Arial" Margin="0,0,0,10">
+                    <Run Text="Telegram ID: "/>
+                    <Run x:Name="TelegramIdRun" Text="Загрузка..."/>
+                </TextBlock>
+
+                <!-- Осталось дней -->
+                <TextBlock FontSize="13" FontFamily="Arial" Margin="0,0,0,10">
+                    <Run Text="Залишилось днів: "/>
+                    <Run x:Name="DaysLeftRun" Text="Загрузка..."/>
+                </TextBlock>
+
+                <!-- Дата окончания -->
+                <TextBlock FontSize="13" FontFamily="Arial" Margin="0,0,0,20">
+                    <Run Text="Дата закінчення: "/>
+                    <Run x:Name="EndDateRun" Text="Загрузка..."/>
+                </TextBlock>
+
+                <Button x:Name="ProceedButton" 
+                        Content="Продовжити" 
+                        Click="ProceedButton_Click" 
+                        FontFamily="Arial" 
+                        Padding="10,5" 
+                        HorizontalAlignment="Center"/>
+                <TextBlock x:Name="ErrorMessage" 
+                           Foreground="Red" 
+                           Visibility="Hidden" 
+                           FontSize="13" 
+                           FontFamily="Arial" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
